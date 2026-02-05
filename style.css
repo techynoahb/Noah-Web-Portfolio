@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: white;
+  background-image: linear-gradient(to right, #56ccf2, #2f80ed);
+  min-height: 100vh;
+}
+
+/* Navbar */
+#nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  background-image: linear-gradient(to right, #56ccf2, #2f80ed);
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* "NB" badge */
+.logo-text {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: white;
+  color: #2f80ed;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* Nav bar links */
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+  padding: 16px 12px;
+}
+
+/* Banner /  stment*/
+#banner {
+  color: white;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.promo-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Shared page sections */
+.page-section {
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
+
+/* Cards (About + Projects) */
+.card-dark {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+}
+
+/* FORCE WHITE TEXT INSIDE CARDS */
+.card-dark,
+.card-dark h1,
+.card-dark h2,
+.card-dark h3,
+.card-dark h4,
+.card-dark h5,
+.card-dark h6,
+.card-dark p,
+.card-dark li {
+  color: white !important;
+}
+
+.card-dark ul {
+  padding-left: 18px;
+}
+
+/* Contact icons */
+.contact-icons {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-icons a {
+  color: white;
+  font-size: 40px;
+  transition: 0.3s;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
+}
+
+/* Navbar toggler visibility */
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Mobile tweaks */
+@media (max-width: 576px) {
+  #banner {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .promo-title {
+    font-size: 24px;
+  }
+
+  .contact-icons a {
+    font-size: 34px;
+  }
+}
