@@ -131,3 +131,9 @@ body {
     font-size: 34px;
   }
 }
+.nav-logo {
+  height: 42px;     /* controls size */
+  width: 42px;
+  object-fit: cover; /* keeps it from stretching */
+  border-radius: 50%; /* makes it circular */
+}
