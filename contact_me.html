@@ -3,30 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Contact | Noah Bush</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <nav id="nav-bar" class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid px-4">
-<a class="navbar-brand" href="portfolio_home.html">
-  <img src="assets/noah.jpeg" alt="Noah Bush" class="nav-logo">
-</a>
-
+    <div class="container px-4">
+      <a class="navbar-brand" href="portfolio_home.html">
+        <img src="assets/noah.jpeg" alt="Noah Bush" class="nav-logo">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item"><a class="nav-link" href="portfolio_home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about_me.html">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="about_me.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
           <li class="nav-item"><a class="nav-link active" href="contact_me.html">Contact</a></li>
         </ul>
@@ -34,23 +33,55 @@
     </div>
   </nav>
 
-  <section id="contact" class="page-section text-white py-5">
-    <div class="container text-center">
-      <h1 class="fw-bold">Get In Touch</h1>
-      <p class="lead mt-2">
-        I’m currently looking open for internship and project experience so feel free to reach out!
-      </p>
+  <section class="page-section">
+    <div class="container px-4">
 
-      <div class="contact-icons mt-4">
-        <a href="mailto:noahbush2227@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://github.com/noahbuaf" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/noah-bush-377a29357/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <div class="text-center mb-5 fade-up">
+        <p class="section-label">Say hello</p>
+        <h1 class="section-title">Get In Touch</h1>
+        <p class="section-lead mx-auto">
+          I'm open to internship opportunities and interesting projects. My inbox is always open.
+        </p>
       </div>
 
-      <p class="mt-4 mb-0">📍 Fairbanks, Alaska</p>
+      <div class="contact-card fade-up">
+        <div class="contact-icons">
+          <a href="mailto:noahbush2227@gmail.com" class="contact-link" aria-label="Email">
+            <i class="fa-solid fa-envelope" style="color:#3b82f6;"></i>
+            noahbush2227@gmail.com
+          </a>
+          <a href="https://github.com/noahbuaf" target="_blank" rel="noopener" class="contact-link" aria-label="GitHub">
+            <i class="fa-brands fa-github" style="color:#e2e8f0;"></i>
+            github.com/noahbuaf
+          </a>
+          <a href="https://www.linkedin.com/in/noah-bush-377a29357/" target="_blank" rel="noopener" class="contact-link" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin" style="color:#0a66c2;"></i>
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="location-tag">
+          <i class="fa-solid fa-location-dot" style="color:#3b82f6;"></i>
+          Fairbanks, Alaska
+        </div>
+      </div>
+
     </div>
   </section>
 
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2026 Noah Bush &mdash; Built with HTML, CSS &amp; Bootstrap
+    </div>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const els = document.querySelectorAll('.fade-up');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>

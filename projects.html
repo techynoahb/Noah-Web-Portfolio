@@ -3,29 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Projects | Noah Bush</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <nav id="nav-bar" class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid px-4">
-    <a class="navbar-brand" href="portfolio_home.html">
-  <img src="assets/noah.jpeg" alt="Noah Bush" class="nav-logo">
-</a>
-
+    <div class="container px-4">
+      <a class="navbar-brand" href="portfolio_home.html">
+        <img src="assets/noah.jpeg" alt="Noah Bush" class="nav-logo">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item"><a class="nav-link" href="portfolio_home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about_me.html">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="about_me.html">About</a></li>
           <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="contact_me.html">Contact</a></li>
         </ul>
@@ -33,34 +33,68 @@
     </div>
   </nav>
 
-  <section class="page-section text-white py-5">
-    <div class="container">
-      <h1 class="fw-bold mb-3">Projects</h1>
-      <p class="lead">A few things I have built that I am passionate about</p>
+  <section class="page-section">
+    <div class="container px-4">
 
-      <div class="row g-4 mt-1">
+      <div class="mb-5 fade-up">
+        <p class="section-label">Work</p>
+        <h1 class="section-title">Projects</h1>
+        <p class="section-lead">A few things I've built that I'm proud of.</p>
+      </div>
 
-        <div class="col-md-6 col-lg-4">
-          <div class="card card-dark p-4 h-100">
-            <h3 class="h5 fw-bold">WebFolio</h3>
-            <p class="mb-0">My very own responsive, mobile-friendly web portfolio made to display my experience, projects, contact and more.</p>
-            <h6 class ="h6 fw-bold">Skills: HTML, CSS, JavaScript, Bootstrap.</h6>
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="project-card">
+            <div class="project-card-header">
+              <h3 class="project-title">WebFolio</h3>
+              <span class="project-status status-live">Live</span>
+            </div>
+            <p class="project-desc">
+              This very portfolio — a responsive, mobile-friendly site showcasing my experience, projects, and contact info. Deployed via GitHub Pages.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Bootstrap</span>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4">
-          <div class="card card-dark p-4 h-100">
-            <h3 class="h5 fw-bold">PongDuino</h3>
-            <p class="mb-0">A nintendo-like Pong game that uses OLED display, Joystick and Arduino micro-controller. </p>
-            <h6 class = "h6 fw-bold">Skills: Hardware, C++, ArduinoIDE</h6>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="project-card">
+            <div class="project-card-header">
+              <h3 class="project-title">PongDuino</h3>
+              <span class="project-status status-live">Complete</span>
+            </div>
+            <p class="project-desc">
+              A Nintendo-style Pong game running on an Arduino microcontroller with an OLED display and joystick controls. Bare-metal hardware project.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">C++</span>
+              <span class="project-tag">Arduino</span>
+              <span class="project-tag">Hardware</span>
+              <span class="project-tag">OLED</span>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4">
-          <div class="card card-dark p-4 h-100">
-            <h3 class="h5 fw-bold">League of Legends AI assistant (in-progress)</h3>
-            <p class="mb-0"> An AI assistant using machine learning algorithms to help choose the right character for every match.</p>
-            <h6 class = "h6 fw-bold">Skills: Python, NumPy, Pandas</h6>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="project-card">
+            <div class="project-card-header">
+              <h3 class="project-title">LoL AI Assistant</h3>
+              <span class="project-status status-wip">In Progress</span>
+            </div>
+            <p class="project-desc">
+              An AI assistant that uses machine learning to recommend the optimal champion pick for every League of Legends match based on team composition.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">NumPy</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">ML</span>
+            </div>
           </div>
         </div>
 
@@ -68,6 +102,19 @@
     </div>
   </section>
 
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2026 Noah Bush &mdash; Built with HTML, CSS &amp; Bootstrap
+    </div>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const els = document.querySelectorAll('.fade-up');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>

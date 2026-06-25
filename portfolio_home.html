@@ -3,31 +3,234 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Noah Bush Web Portfolio</title>
-
+  <title>Noah Bush | CS @ UAF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ── dot grid background ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #banner {
+      position: relative;
+      z-index: 1;
+      padding: 120px 0 100px;
+      min-height: calc(100vh - 62px);
+      display: flex;
+      align-items: center;
+    }
+
+    #banner .container { width: 100%; }
+
+    /* ── hero entrance animations ── */
+    .h-anim {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: hRise 0.6s ease forwards;
+    }
+    .h-anim:nth-child(1) { animation-delay: 0.05s; }
+    .h-anim:nth-child(2) { animation-delay: 0.18s; }
+    .h-anim:nth-child(3) { animation-delay: 0.30s; }
+    .h-anim:nth-child(4) { animation-delay: 0.42s; }
+    .h-anim:nth-child(5) { animation-delay: 0.54s; }
+
+    @keyframes hRise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* photo entrance */
+    .photo-anim {
+      opacity: 0;
+      transform: scale(0.92);
+      animation: photoIn 0.7s ease 0.25s forwards;
+    }
+    @keyframes photoIn {
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* ── typewriter role ── */
+    .hero-role-line {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      font-weight: 400;
+      min-height: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 1.1rem;
+    }
+
+    #typed-role {
+      color: #60a5fa;
+      font-weight: 600;
+    }
+
+    .cursor-blink {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background: #3b82f6;
+      margin-left: 3px;
+      vertical-align: middle;
+      animation: blink 0.9s step-end infinite;
+      border-radius: 1px;
+    }
+    @keyframes blink { 0%,100%{ opacity:1; } 50%{ opacity:0; } }
+
+    /* ── orbit ring behind photo ── */
+    .hero-photo-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orbit-ring {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 1px dashed rgba(59,130,246,0.22);
+      animation: spin 22s linear infinite;
+    }
+    .orbit-ring::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background: #3b82f6;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #3b82f6;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .orbit-ring-2 {
+      width: 340px;
+      height: 340px;
+      border-color: rgba(139,92,246,0.12);
+      animation-duration: 34s;
+      animation-direction: reverse;
+    }
+    .orbit-ring-2::before {
+      background: #8b5cf6;
+      box-shadow: 0 0 8px #8b5cf6;
+      top: auto;
+      bottom: -4px;
+    }
+
+    /* ── what I do section ── */
+    #what-i-do {
+      position: relative;
+      z-index: 1;
+      padding: 80px 0 100px;
+      border-top: 1px solid #21262d;
+    }
+
+    .wid-card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 14px;
+      padding: 1.75rem 1.5rem;
+      height: 100%;
+      transition: border-color 0.25s, transform 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .wid-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--c1), var(--c2));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .wid-card:hover { border-color: rgba(59,130,246,0.3); transform: translateY(-4px); }
+    .wid-card:hover::after { opacity: 1; }
+
+    .wid-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .wid-card-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: #e2e8f0; }
+    .wid-card-desc  { font-size: 0.85rem; color: #8b949e; line-height: 1.7; margin: 0; }
+
+    /* ── scroll indicator ── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: #30363d;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: hRise 0.6s ease 1s forwards;
+      opacity: 0;
+    }
+    .scroll-hint-dot {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, #3b82f6);
+      animation: scrollPulse 1.8s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.3; transform: scaleY(0.6); }
+      50%      { opacity: 1;   transform: scaleY(1);   }
+    }
+
+    @media (max-width: 991px) {
+      #banner { min-height: auto; padding: 80px 0 70px; }
+      .orbit-ring  { width: 210px; height: 210px; }
+      .orbit-ring-2 { width: 260px; height: 260px; }
+      .hero-photo { width: 170px; height: 170px; }
+      .scroll-hint { display: none; }
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- NAVBAR -->
   <nav id="nav-bar" class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid px-4">
+    <div class="container px-4">
       <a class="navbar-brand" href="portfolio_home.html">
-  <img src="assets/noah.jpeg" alt="Noah Bush" class="nav-logo">
-</a>
-
+        <img src="assets/noah.jpeg" alt="Noah Bush" class="nav-logo">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item"><a class="nav-link active" href="portfolio_home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about_me.html">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="about_me.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="contact_me.html">Contact</a></li>
         </ul>
@@ -35,27 +238,146 @@
     </div>
   </nav>
 
-  <!-- HERO / BANNER -->
-  <section id="banner" class="py-5 text-white">
-    <div class="container">
-      <div class="row align-items-center">
+  <!-- HERO -->
+  <section id="banner">
+    <div class="container px-4">
+      <div class="row align-items-center gy-5">
+
+        <!-- Text column -->
         <div class="col-lg-7">
-          <h1 class="fw-bold display-5 mb-2">Noah Bush</h1>
-          <p class="promo-title mb-3">Junior Computer Science Major (UAF)</p>
-          <p class="lead">
-            Junior Computer Science major at UAF passionate about full-stack web development and AI —
-            building modern applications from frontend to backend.
+          <span class="hero-eyebrow h-anim">Open to internships &amp; projects</span>
+
+          <h1 class="hero-name h-anim">Noah Bush</h1>
+
+          <div class="hero-role-line h-anim">
+            <span id="typed-role"></span><span class="cursor-blink"></span>
+          </div>
+
+          <p class="hero-desc h-anim">
+            Junior CS major at UAF building full-stack apps and exploring
+            AI&nbsp;— from hardware projects to machine learning pipelines.
           </p>
 
-          <div class="d-flex gap-3 mt-4 flex-wrap">
-            <a class="btn btn-outline-light" href="projects.html">View Projects</a>
-            <a class="btn btn-light text-dark" href="contact_me.html">Contact Me</a>
+          <div class="d-flex gap-3 mt-4 flex-wrap h-anim">
+            <a class="btn-primary-custom" href="projects.html">
+              <i class="fa-solid fa-folder-open fa-sm"></i>&nbsp;View Projects
+            </a>
+            <a class="btn-ghost-custom" href="contact_me.html">
+              <i class="fa-solid fa-paper-plane fa-sm"></i>&nbsp;Get In Touch
+            </a>
           </div>
         </div>
+
+        <!-- Photo column -->
+        <div class="col-lg-5">
+          <div class="hero-photo-wrap photo-anim">
+            <div class="orbit-ring"></div>
+            <div class="orbit-ring orbit-ring-2"></div>
+            <div class="hero-photo-glow"></div>
+            <img src="assets/noah.jpeg" alt="Noah Bush" class="hero-photo" style="position:relative;z-index:2;">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- scroll hint -->
+    <div class="scroll-hint">
+      <div class="scroll-hint-dot"></div>
+      scroll
+    </div>
+  </section>
+
+  <!-- WHAT I DO -->
+  <section id="what-i-do">
+    <div class="container px-4">
+
+      <div class="text-center mb-5 fade-up">
+        <p class="section-label">Capabilities</p>
+        <h2 class="section-title">What I do</h2>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-4 fade-up">
+          <div class="wid-card" style="--c1:#3b82f6;--c2:#60a5fa;">
+            <div class="wid-card-icon" style="background:rgba(59,130,246,0.1);color:#60a5fa;">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <p class="wid-card-title">Full-Stack Development</p>
+            <p class="wid-card-desc">
+              Building end-to-end web applications — React frontends, Node/Express backends, and MongoDB databases.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 fade-up">
+          <div class="wid-card" style="--c1:#8b5cf6;--c2:#a78bfa;">
+            <div class="wid-card-icon" style="background:rgba(139,92,246,0.1);color:#a78bfa;">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <p class="wid-card-title">AI &amp; Machine Learning</p>
+            <p class="wid-card-desc">
+              Integrating ML models and data pipelines into real applications using Python, NumPy, and Pandas.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 fade-up">
+          <div class="wid-card" style="--c1:#06b6d4;--c2:#67e8f9;">
+            <div class="wid-card-icon" style="background:rgba(6,182,212,0.1);color:#67e8f9;">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <p class="wid-card-title">Hardware &amp; Embedded</p>
+            <p class="wid-card-desc">
+              Writing bare-metal C++ for Arduino microcontrollers — sensors, displays, and real-time control loops.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
+  <footer class="site-footer" style="position:relative;z-index:1;">
+    <div class="container">
+      &copy; 2026 Noah Bush &mdash; Built with HTML, CSS &amp; Bootstrap
+    </div>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ── typewriter ──
+    const roles = [
+      'Full-Stack Developer',
+      'CS Student @ UAF',
+      'AI Enthusiast',
+      'Hardware Tinkerer',
+    ];
+    const el = document.getElementById('typed-role');
+    let ri = 0, ci = 0, deleting = false, pause = 0;
+
+    function tick() {
+      const word = roles[ri];
+      if (pause > 0) { pause--; setTimeout(tick, 80); return; }
+
+      if (!deleting) {
+        el.textContent = word.slice(0, ++ci);
+        if (ci === word.length) { pause = 18; deleting = true; }
+        setTimeout(tick, 85);
+      } else {
+        el.textContent = word.slice(0, --ci);
+        if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; pause = 4; }
+        setTimeout(tick, 45);
+      }
+    }
+    setTimeout(tick, 600);
+
+    // ── scroll fade-in ──
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>
