@@ -3,143 +3,82 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About — WebFolio</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%233b82f6'/><text x='16' y='22' font-family='Inter,sans-serif' font-size='18' font-weight='800' fill='white' text-anchor='middle'>N</text></svg>">
+  <title>About | Noah Bush</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%2314211F'/><text x='16' y='23' font-family='sans-serif' font-size='19' font-weight='700' fill='%23EEF2F1' text-anchor='middle'>N</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <nav id="nav-bar" class="navbar navbar-expand-lg navbar-dark">
-    <div class="container px-4">
-      <a class="navbar-brand" href="portfolio_home.html">
-        <img src="assets/noah.jpeg" alt="Noah Bush" class="nav-logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto gap-1">
-          <li class="nav-item"><a class="nav-link" href="portfolio_home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about_me.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact_me.html">Contact</a></li>
-        </ul>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="portfolio_home.html">Noah Bush</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="about_me.html" aria-current="page">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact_me.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div class="wrap">
+        <h1>About</h1>
+        <p>Senior computer science student at the University of Alaska Fairbanks, looking for a software engineering internship.</p>
       </div>
     </div>
-  </nav>
 
-  <section class="page-section">
-    <div class="container px-4">
-
-      <div class="mb-5 fade-up">
-        <p class="section-label">Background</p>
-        <h1 class="section-title">About Me</h1>
-        <p class="section-lead">
-          Junior CS major at UAF building towards a career in full-stack development and AI-powered applications.
-        </p>
-      </div>
-
-      <div class="row g-4 mb-4">
-
-        <div class="col-lg-6 fade-up">
-          <div class="card-dark p-4 h-100">
-            <div class="card-icon">
-              <i class="fa-solid fa-bullseye"></i>
-            </div>
-            <h3 class="h6 fw-700 mb-3" style="font-weight:700;font-size:0.95rem;letter-spacing:-0.01em;">What I'm focused on</h3>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;">
-              <li style="display:flex;align-items:flex-start;gap:0.6rem;color:#9ca3af;font-size:0.88rem;">
-                <i class="fa-solid fa-check" style="color:#3b82f6;margin-top:3px;flex-shrink:0;"></i>
-                Full-stack development — frontend and backend
-              </li>
-              <li style="display:flex;align-items:flex-start;gap:0.6rem;color:#9ca3af;font-size:0.88rem;">
-                <i class="fa-solid fa-check" style="color:#3b82f6;margin-top:3px;flex-shrink:0;"></i>
-                Clean, user-friendly UIs using Bootstrap &amp; React
-              </li>
-              <li style="display:flex;align-items:flex-start;gap:0.6rem;color:#9ca3af;font-size:0.88rem;">
-                <i class="fa-solid fa-check" style="color:#3b82f6;margin-top:3px;flex-shrink:0;"></i>
-                Integrating AI &amp; machine learning into real applications
-              </li>
+    <section class="section">
+      <div class="wrap row">
+        <h2>Tools I use</h2>
+        <div>
+          <div class="stack-group">
+            <h3>Languages</h3>
+            <ul class="stack">
+              <li>JavaScript</li><li>Python</li><li>C</li><li>C++</li><li>HTML and CSS</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3>Web and backend</h3>
+            <ul class="stack">
+              <li>React</li><li>Node.js</li><li>Express</li><li>FastAPI</li><li>Socket.io</li><li>MongoDB</li><li>SQLite</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3>AI integration</h3>
+            <ul class="stack">
+              <li>Model Context Protocol (MCP)</li><li>Claude API</li><li>Tool use and agent workflows</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3>Workflow</h3>
+            <ul class="stack">
+              <li>Git and GitHub</li><li>GitHub Actions</li><li>Docker</li><li>pytest</li><li>Linux</li>
             </ul>
           </div>
         </div>
-
-        <div class="col-lg-6 fade-up">
-          <div class="card-dark p-4 h-100">
-            <div class="card-icon">
-              <i class="fa-solid fa-code"></i>
-            </div>
-            <h3 class="h6 fw-700 mb-3" style="font-weight:700;font-size:0.95rem;letter-spacing:-0.01em;">Tech stack</h3>
-
-            <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:#8b949e;margin-bottom:0.6rem;font-weight:600;">Languages</p>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem;">
-              <span class="skill-badge"><i class="fa-solid fa-code fa-xs"></i> C++</span>
-              <span class="skill-badge"><i class="fa-brands fa-html5 fa-xs"></i> HTML</span>
-              <span class="skill-badge"><i class="fa-brands fa-css3-alt fa-xs"></i> CSS</span>
-              <span class="skill-badge"><i class="fa-brands fa-js fa-xs"></i> JavaScript</span>
-              <span class="skill-badge"><i class="fa-brands fa-python fa-xs"></i> Python</span>
-            </div>
-
-            <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:#8b949e;margin-bottom:0.6rem;font-weight:600;">Frameworks &amp; Libraries</p>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem;">
-              <span class="skill-badge"><i class="fa-brands fa-react fa-xs"></i> React</span>
-              <span class="skill-badge"><i class="fa-brands fa-bootstrap fa-xs"></i> Bootstrap</span>
-              <span class="skill-badge"><i class="fa-brands fa-node-js fa-xs"></i> Node.js</span>
-              <span class="skill-badge">Express.js</span>
-              <span class="skill-badge">NumPy</span>
-              <span class="skill-badge">Pandas</span>
-            </div>
-
-            <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:#8b949e;margin-bottom:0.6rem;font-weight:600;">Databases &amp; Tools</p>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;">
-              <span class="skill-badge"><i class="fa-solid fa-database fa-xs"></i> MongoDB</span>
-              <span class="skill-badge"><i class="fa-brands fa-git-alt fa-xs"></i> Git</span>
-            </div>
-          </div>
-        </div>
-
       </div>
+    </section>
 
-      <div class="fade-up">
-        <div class="card-dark p-4">
-          <div class="d-flex align-items-center gap-3 mb-3">
-            <div class="card-icon" style="margin-bottom:0;">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <div>
-              <h3 style="font-size:0.95rem;font-weight:700;margin:0;">University of Alaska Fairbanks</h3>
-              <p style="color:#8b949e;font-size:0.82rem;margin:0;">B.S. Computer Science &mdash; Junior</p>
-            </div>
-          </div>
-          <p style="color:#9ca3af;font-size:0.88rem;margin:0;">
-            Studying CS with a focus on software engineering, data structures, and algorithms.
-            Actively seeking internship opportunities to apply my skills in a professional environment.
-          </p>
+    <section class="section">
+      <div class="wrap row">
+        <h2>Education</h2>
+        <div class="prose">
+          <p><strong>University of Alaska Fairbanks</strong><br>B.S. Computer Science, senior</p>
+          <p>Coursework includes operating systems, data structures and algorithms, programming languages, and software engineering.</p>
         </div>
       </div>
-
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="site-footer">
-    <div class="container">
-      &copy; 2026 Noah Bush &mdash; Built with HTML, CSS &amp; Bootstrap
+    <div class="wrap">
+      <span>&copy; 2026 Noah Bush</span>
+      <span><a href="https://github.com/noahbuaf">GitHub</a>&ensp;<a href="https://www.linkedin.com/in/noah-bush-377a29357/">LinkedIn</a></span>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const els = document.querySelectorAll('.fade-up');
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.1 });
-    els.forEach(el => obs.observe(el));
-  </script>
 </body>
 </html>
