@@ -5,31 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Noah Bush</title>
   <meta name="description" content="Noah Bush, senior computer science student at the University of Alaska Fairbanks. Full-stack, Python, and MCP/AI integration work.">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%2314211F'/><text x='16' y='23' font-family='sans-serif' font-size='19' font-weight='700' fill='%23EEF2F1' text-anchor='middle'>N</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23102427'/><text x='16' y='23' font-family='sans-serif' font-size='19' font-weight='700' fill='%235FD3A6' text-anchor='middle'>N</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="wrap">
-      <a class="wordmark" href="portfolio_home.html">Noah Bush</a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="about_me.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact_me.html">Contact</a>
-      </nav>
+  <div class="night">
+    <div class="sky" aria-hidden="true">
+      <span class="aurora a1"></span><span class="aurora a2"></span><span class="aurora a3"></span>
     </div>
-  </header>
 
-  <main>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="wordmark" href="portfolio_home.html">Noah Bush</a>
+        <nav class="site-nav" aria-label="Main"><a href="about_me.html">About</a><a href="projects.html">Projects</a><a href="contact_me.html">Contact</a></nav>
+      </div>
+    </header>
+
     <section class="hero">
       <div class="wrap">
         <div class="hero-grid">
           <div>
-            <h1>Noah<br>Bush</h1>
+            <h1 aria-label="Noah Bush"><span class="line" aria-hidden="true"><span class="ch" style="--i:0">N</span><span class="ch" style="--i:1">o</span><span class="ch" style="--i:2">a</span><span class="ch" style="--i:3">h</span></span><span class="line" aria-hidden="true"><span class="ch" style="--i:4">B</span><span class="ch" style="--i:5">u</span><span class="ch" style="--i:6">s</span><span class="ch" style="--i:7">h</span></span></h1>
             <p class="intro">
               Senior in computer science at UAF. I build full-stack web apps,
               Python tools, and the glue that lets AI agents use them.
@@ -39,7 +40,9 @@
               <a class="button" href="mailto:noahbush2227@gmail.com">Email me</a>
             </div>
           </div>
-          <img class="hero-photo" src="assets/noah.jpeg" alt="Portrait of Noah Bush">
+          <div class="photo-frame">
+            <img class="hero-photo" src="assets/noah.jpeg" alt="Portrait of Noah Bush">
+          </div>
         </div>
 
         <p class="latitude">
@@ -47,11 +50,14 @@
         </p>
       </div>
     </section>
+  </div>
+
+  <main>
 
     <section class="section">
-      <div class="wrap row">
+      <div class="wrap row reveal">
         <h2>What I work on</h2>
-        <dl class="facts">
+        <dl class="facts reveal-stagger">
           <div>
             <dt>Full-stack web apps</dt>
             <dd>React frontends, Node and Express APIs, MongoDB, and live dashboards with Socket.io.</dd>
@@ -69,9 +75,9 @@
     </section>
 
     <section class="section">
-      <div class="wrap row">
+      <div class="wrap row reveal">
         <h2>Recent work</h2>
-        <ul class="index-list">
+        <ul class="index-list reveal-stagger">
           <li>
             <a href="projects.html#deadlock">
               <span class="name">Deadlock StatTool</span>
@@ -89,7 +95,7 @@
           <li>
             <a href="projects.html#site">
               <span class="name">This site</span>
-              <span class="kind">HTML and CSS</span>
+              <span class="kind">HTML, CSS, and JavaScript</span>
               <span class="what">Hand-written, no framework, deployed with GitHub Pages.</span>
             </a>
           </li>
@@ -101,26 +107,10 @@
   <footer class="site-footer">
     <div class="wrap">
       <span>&copy; 2026 Noah Bush</span>
-      <span><a href="https://github.com/noahbuaf">GitHub</a>&ensp;<a href="https://www.linkedin.com/in/noah-bush-377a29357/">LinkedIn</a></span>
+      <span><a href="https://github.com/techynoahb">GitHub</a>&ensp;<a href="https://www.linkedin.com/in/noah-bush-377a29357/">LinkedIn</a></span>
     </div>
   </footer>
 
-  <script>
-    // Current time in Fairbanks, next to the latitude line
-    (function () {
-      var out = document.getElementById('local-time');
-      if (!out || !window.Intl) return;
-      function update() {
-        try {
-          var t = new Intl.DateTimeFormat('en-US', {
-            timeZone: 'America/Anchorage', hour: 'numeric', minute: '2-digit'
-          }).format(new Date()).toLowerCase();
-          out.textContent = '. It’s ' + t + ' here.';
-        } catch (e) { out.textContent = ''; }
-      }
-      update();
-      setInterval(update, 30000);
-    })();
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>

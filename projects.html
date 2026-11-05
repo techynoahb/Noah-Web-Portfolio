@@ -4,37 +4,42 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects | Noah Bush</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%2314211F'/><text x='16' y='23' font-family='sans-serif' font-size='19' font-weight='700' fill='%23EEF2F1' text-anchor='middle'>N</text></svg>">
+  <meta name="description" content="Noah Bush, senior computer science student at the University of Alaska Fairbanks. Full-stack, Python, and MCP/AI integration work.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23102427'/><text x='16' y='23' font-family='sans-serif' font-size='19' font-weight='700' fill='%235FD3A6' text-anchor='middle'>N</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="wrap">
-      <a class="wordmark" href="portfolio_home.html">Noah Bush</a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="about_me.html">About</a>
-        <a href="projects.html" aria-current="page">Projects</a>
-        <a href="contact_me.html">Contact</a>
-      </nav>
+  <div class="night">
+    <div class="sky" aria-hidden="true">
+      <span class="aurora a1"></span><span class="aurora a2"></span><span class="aurora a3"></span>
     </div>
-  </header>
 
-  <main>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="wordmark" href="portfolio_home.html">Noah Bush</a>
+        <nav class="site-nav" aria-label="Main"><a href="about_me.html">About</a><a href="projects.html" aria-current="page">Projects</a><a href="contact_me.html">Contact</a></nav>
+      </div>
+    </header>
+
     <div class="page-head">
       <div class="wrap">
-        <h1>Projects</h1>
+        <h1><span>Projects</span></h1>
         <p>Things I've built on my own time.</p>
       </div>
     </div>
+  </div>
+
+  <main>
 
     <div class="wrap">
       <ul class="project-list">
 
-        <li class="project" id="deadlock">
+        <li class="project reveal" id="deadlock">
           <div class="project-head">
             <h2>Deadlock StatTool</h2>
             <span class="status active">In progress</span>
@@ -50,22 +55,27 @@
             commands, stores linked accounts in SQLite, and caches responses so a busy server
             doesn't hammer the API. Tests run offline against fake data shaped like real responses.
           </p>
-          <pre class="terminal"><code><span class="c"># find yourself, then save your account</span>
+          <div class="terminal">
+            <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+<pre data-typing>
+# find yourself, then save your account
 deadlock search "your steam name"
 deadlock set-me 123456789
 
-<span class="c"># win rate, KDA, rank, top heroes, recent trend</span>
+# win rate, KDA, rank, top heroes, recent trend
 deadlock summary
 
-<span class="c"># you vs. the average player at your rank on one hero</span>
+# you vs. the average player at your rank on one hero
 deadlock coach haze
 
-<span class="c"># best items for Haze when facing Infernus</span>
-deadlock items haze --vs infernus</code></pre>
+# best items for Haze when facing Infernus
+deadlock items haze --vs infernus
+</pre>
+          </div>
           <p class="built-with">Built with <span>Python, Typer, Rich, httpx, discord.py, SQLite, pytest</span></p>
         </li>
 
-        <li class="project" id="pongduino">
+        <li class="project reveal" id="pongduino">
           <div class="project-head">
             <h2>PongDuino</h2>
             <span class="status">Finished</span>
@@ -80,15 +90,16 @@ deadlock items haze --vs infernus</code></pre>
           <p class="built-with">Built with <span>C++, Arduino, OLED display</span></p>
         </li>
 
-        <li class="project" id="site">
+        <li class="project reveal" id="site">
           <div class="project-head">
             <h2>This site</h2>
             <span class="status active">Live</span>
           </div>
           <p class="summary">
-            My portfolio, written by hand in HTML and CSS and deployed with GitHub Pages.
+            My portfolio, written by hand in HTML, CSS, and JavaScript and deployed with GitHub Pages.
+            The travel map on the About page is generated from real map data with D3.
           </p>
-          <p class="built-with">Built with <span>HTML, CSS, GitHub Actions</span></p>
+          <p class="built-with">Built with <span>HTML, CSS, JavaScript, D3 (map generation), GitHub Actions</span></p>
         </li>
 
       </ul>
@@ -98,8 +109,10 @@ deadlock items haze --vs infernus</code></pre>
   <footer class="site-footer">
     <div class="wrap">
       <span>&copy; 2026 Noah Bush</span>
-      <span><a href="https://github.com/noahbuaf">GitHub</a>&ensp;<a href="https://www.linkedin.com/in/noah-bush-377a29357/">LinkedIn</a></span>
+      <span><a href="https://github.com/techynoahb">GitHub</a>&ensp;<a href="https://www.linkedin.com/in/noah-bush-377a29357/">LinkedIn</a></span>
     </div>
   </footer>
+
+  <script src="site.js"></script>
 </body>
 </html>
