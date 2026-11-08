@@ -623,6 +623,6 @@ a:focus-visible, .button:focus-visible, [tabindex]:focus-visible {
   .js .reveal, .js .reveal-stagger > * { opacity: 1; transform: none; }
 }
 
-.repo-link { display: inline-grid; place-items: center; width: 2.5rem; height: 2.5rem; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); transition: color 0.2s, border-color 0.2s; }
+.repo-link { margin-right: auto; align-self: center; display: inline-grid; place-items: center; width: 2.5rem; height: 2.5rem; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); transition: color 0.2s, border-color 0.2s; }
 .repo-link:hover, .repo-link:focus-visible { color: var(--accent); border-color: currentColor; }
 .repo-link svg { width: 1.25rem; height: 1.25rem; }
