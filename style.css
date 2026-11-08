@@ -626,3 +626,6 @@ a:focus-visible, .button:focus-visible, [tabindex]:focus-visible {
 .repo-link { margin-right: auto; align-self: center; display: inline-grid; place-items: center; width: 2.5rem; height: 2.5rem; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); transition: color 0.2s, border-color 0.2s; }
 .repo-link:hover, .repo-link:focus-visible { color: var(--accent); border-color: currentColor; }
 .repo-link svg { width: 1.25rem; height: 1.25rem; }
+
+.resume-sheet { display: block; max-width: 760px; margin: 0 auto; border: 1px solid var(--line); box-shadow: 0 12px 32px rgb(0 0 0 / 0.12); }
+.resume-sheet img { display: block; width: 100%; height: auto; }
