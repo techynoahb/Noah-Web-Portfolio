@@ -45,34 +45,17 @@
             <span class="status active">In progress</span>
           </div>
           <p class="summary">
-            A command-line tool and Discord bot for checking stats in the game Deadlock,
-            built on the free community Deadlock API.
-          </p>
-          <p class="detail">
-            The CLI covers match history, per-hero stats, a coach command that compares you to the
-            average player at your rank, item win rates against specific enemies, and a draft
-            win-chance estimate. The Discord bot reuses the same API and stats code behind slash
-            commands, stores linked accounts in SQLite, and caches responses so a busy server
-            doesn't hammer the API. Tests run offline against fake data shaped like real responses.
+            A command-line tool and Discord bot for looking up your stats in Deadlock: match history,
+            hero stats, and which items win against which enemies.
           </p>
           <div class="terminal">
             <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span></div>
 <pre data-typing>
-# find yourself, then save your account
-deadlock search "your steam name"
-deadlock set-me 123456789
-
-# win rate, KDA, rank, top heroes, recent trend
 deadlock summary
-
-# you vs. the average player at your rank on one hero
-deadlock coach haze
-
-# best items for Haze when facing Infernus
 deadlock items haze --vs infernus
 </pre>
           </div>
-          <p class="built-with">Built with <span>Python, Typer, Rich, httpx, discord.py, SQLite, pytest</span></p>
+          <p class="built-with">Built with <span>Python, discord.py</span></p>
         </li>
 
         <li class="project reveal" id="pongduino">
@@ -90,6 +73,16 @@ deadlock items haze --vs infernus
           <p class="built-with">Built with <span>C++, Arduino, OLED display</span></p>
         </li>
 
+        <li class="project reveal" id="leetcode">
+          <div class="project-head">
+            <h2>LeetCode Solutions</h2>
+            <a class="repo-link" href="https://github.com/techynoahb/Leetcode-Solutions" aria-label="LeetCode Solutions on GitHub" title="View on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+          </div>
+          <p class="summary">
+            My LeetCode solutions. I try to do about one a day.
+          </p>
+        </li>
+
         <li class="project reveal" id="site">
           <div class="project-head">
             <h2>This site</h2>
@@ -99,7 +92,7 @@ deadlock items haze --vs infernus
             My portfolio, hosted on GitHub Pages. I made the travel map on the About page
             from real map data with D3.
           </p>
-          <p class="built-with">Built with <span>HTML, CSS, JavaScript, D3 (map generation), GitHub Actions</span></p>
+          <p class="built-with">Built with <span>HTML, CSS, JavaScript, D3</span></p>
         </li>
 
       </ul>
