@@ -571,17 +571,20 @@ a:focus-visible, .button:focus-visible, [tabindex]:focus-visible {
 .places .home-note { color: var(--muted); }
 
 /* contact */
-.contact-list { list-style: none; margin: 0; padding: 0; max-width: var(--measure); }
-.contact-list li {
+.contact-icons { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem; }
+.contact-icons a {
   display: grid;
-  grid-template-columns: 7rem 1fr;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--line);
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
 }
-.contact-list li:last-child { border-bottom: 1px solid var(--line); }
-.contact-list .label { color: var(--muted); }
-.contact-list a { font-size: 1.15rem; word-break: break-word; }
+.contact-icons a:hover, .contact-icons a:focus-visible { color: var(--accent); border-color: currentColor; transform: translateY(-2px); }
+.contact-icons svg { width: 1.6rem; height: 1.6rem; }
+.contact-note { margin-top: 1.5rem; color: var(--muted); }
 
 /* ---------- footer ---------- */
 .site-footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
@@ -602,7 +605,6 @@ a:focus-visible, .button:focus-visible, [tabindex]:focus-visible {
   .latitude { flex-direction: column; align-items: stretch; gap: 0.6rem; }
   .index-list a, .games li > div { grid-template-columns: 1fr; }
   .index-list .kind, .games .kind { text-align: left; }
-  .contact-list li { grid-template-columns: 1fr; gap: 0.15rem; }
   .map .pin circle { transform: scale(1.5); }
 }
 @media (max-width: 599px) {
